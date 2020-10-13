@@ -12,9 +12,6 @@ exports.getPorHora = function (req, res) {
 
 exports.postValor = function (req, res) {
   var _valor = req.body.valor;
-
-  console.log(_valor);
-
   var valorAGuardar = new valorMoneda({
     valor: _valor
   });
