@@ -7,10 +7,10 @@ exports.postValor = function (req, res) {
   var fecha = req.body.fecha;
   var valor = req.body.valor;
 
-  console.log(new Date(1000 * fecha));
+  console.log(new Date(fecha));
 
   var valorAGuardar = new valorMoneda({
-    fecha: new Date(1000 * fecha),
+    fecha: new Date(fecha),
     valor: valor,
   });
 
