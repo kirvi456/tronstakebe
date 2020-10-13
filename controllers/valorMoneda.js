@@ -1,7 +1,14 @@
 "use strict";
 var valorMoneda = require("../models/valorMoneda");
 
-exports.getPorHora = function (req, res) {};
+exports.getPorHora = function (req, res) {
+    valorMoneda.find({}, function(err, resultado){
+        if(err) return res.status(500).send("No se pudo conectar a la base de datos.");
+        if(!resultado) res.status(200).json('[]');
+        res.status(200).json(resultado);
+    });
+
+};
 
 exports.postValor = function (req, res) {
   var _valor = req.body.valor;
