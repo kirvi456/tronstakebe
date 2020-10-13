@@ -4,11 +4,12 @@ var valorMoneda = require("../models/valorMoneda");
 exports.getPorHora = function (req, res) {};
 
 exports.postValor = function (req, res) {
-  var fecha = req.body.fecha;
-  var valor = req.body.valor;
+  var _valor = req.body.valor;
+
+  console.log(_valor);
 
   var valorAGuardar = new valorMoneda({
-    valor: valor,
+    valor: _valor
   });
 
   valorAGuardar.save(function (err, partida) {
