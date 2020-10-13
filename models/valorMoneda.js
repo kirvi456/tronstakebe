@@ -2,7 +2,7 @@
 var mongoose = require('mongoose');
 
 var valorMonedaSchema = new mongoose.Schema({
-    fecha: Date,    
+    fecha: {type: Date, default: Date.now},    
     valor: Number,
 });
 
