@@ -1,22 +1,22 @@
-'use strict'
-var Nacimiento = require('../models/valorMoneda');
+"use strict";
+var valorMoneda = require("../models/valorMoneda");
 
-exports.getPorHora = function (req, res){
-	var dpiPoM = req.body.dpipadremadre;
-    Nacimiento.find({$or:[{dpipadre:  dpiPoM}, {dpimadre:  dpiPoM}]}, function(err, resultado){
-        if(err) return res.status(500).send("No se pudo conectar a la base de datos.");
-        if(!resultado) res.status(200).json('[]');
-        res.status(200).json(resultado);
+exports.getPorHora = function (req, res) {};
+
+exports.postValor = function (req, res) {
+  var fecha = req.body.fecha;
+  var valor = req.body.valor;
+
+  var valorAGuardar = new valorMoneda({
+    fecha: fecha,
+    valor: valor,
+  });
+
+  valorAGuardar.save(function (err, partida) {
+    if (err) return res.status(500).json({ estado: 500, mensaje: err });
+    return res.status(200).json({
+      estado: 200,
+      mensaje: "Valor guardado con exito.",
     });
-}
-
-
-exports.postValor = function (req, res){
-	var dpiPoM = req.body.dpipadremadre;
-    Nacimiento.find({$or:[{dpipadre:  dpiPoM}, {dpimadre:  dpiPoM}]}, function(err, resultado){
-        if(err) return res.status(500).send("No se pudo conectar a la base de datos.");
-        if(!resultado) res.status(200).json('[]');
-        res.status(200).json(resultado);
-    });
-}
-
+  });
+};
