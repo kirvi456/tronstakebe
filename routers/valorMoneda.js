@@ -7,7 +7,9 @@ var api = express.Router();
 
 
 
-api.post('/getPorHora',                 controller.getPorHora);
+api.get('/getPorHora',                 controller.getPorHora);
+api.get('/getDatos',                   controller.getDatos);
+
 api.post('/postValor',                  controller.postValor);
 
 
