@@ -3,7 +3,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
-var port = 80;
+var port = 443;
 
 const jsonErrorHandler = async (err, req, res, next) => {
     res.status(500).send({ error: err });
