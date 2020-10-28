@@ -10,7 +10,7 @@ var api = express.Router();
 api.get('/getPorHora',                 controller.getPorHora);
 api.get('/getDatos',                   controller.getDatos);
 api.get('/getPerWeek',                 controller.getPerWeek);
-
+api.get('/getPerMonth',                 controller.getPerMonth);
 
 api.post('/postValor',                  controller.postValor);
 
