@@ -10,6 +10,19 @@ exports.getPorHora = function (req, res) {
 
 };
 
+exports.getPerWeek = function (req, res) {
+  valorMoneda.find({timestamp:{
+    $lte: new Date(),
+    $gte: new Date(new Date() - 7 * 60 * 60 * 24 * 1000),
+    }
+  }).sort('-fecha').limit(20).exec(function(err, resultado){
+      if(err) return res.status(500).send("No se pudo conectar a la base de datos.");
+      if(!resultado) res.status(200).json('[]');
+      res.status(200).json(resultado);
+  });
+
+};
+
 exports.getDatos = function (req, res) {
   valorMoneda.find({}).sort('-fecha').limit(20).exec(function(err, resultado){
       if(err) return res.status(500).send("No se pudo conectar a la base de datos.");
