@@ -11,7 +11,7 @@ exports.getPorHora = function (req, res) {
 };
 
 exports.getPerWeek = function (req, res) {
-  valorMoneda.find({timestamp:{
+  valorMoneda.find({fecha:{
     $lte: new Date(),
     $gte: new Date(new Date() - 7 * 60 * 60 * 24 * 1000),
     }
