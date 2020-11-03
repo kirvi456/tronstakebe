@@ -23,7 +23,7 @@ exports.getPerWeek = function (req, res) {
 };
 
 exports.getPerMonth = function (req, res) {
-  valorMoneda.find({}).sort('-fecha').limit(20).exec(function(err, resultado){
+  valorMoneda.find({}).sort('-fecha').exec(function(err, resultado){
       if(err) return res.status(500).send("No se pudo conectar a la base de datos.");
       if(!resultado) res.status(200).json('[]');
       res.status(200).json(resultado);

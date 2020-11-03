@@ -11,6 +11,7 @@ const jsonErrorHandler = async (err, req, res, next) => {
 
 var app = express();
 
+var retiro_routes = require('./routers/retiroRouter');
 var valorMoneda_routes = require('./routers/valorMoneda');
 var cors = require('cors');
 
@@ -22,6 +23,7 @@ app.use(jsonErrorHandler)
 
 
 app.use('/', valorMoneda_routes);
+app.use('/', retiro_routes);
 
 
 module.exports = app;

@@ -6,4 +6,9 @@ var valorMonedaSchema = new mongoose.Schema({
     valor: {type: Number, required: true}
 });
 
+var valorRetiroSchema = new mongoose.Schema({
+    player: {type: Number, required: true},
+    valor: {type: Number, required: true}
+});
+
 module.exports = mongoose.model('valorMoneda', valorMonedaSchema, "moneda");
