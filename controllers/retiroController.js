@@ -25,7 +25,7 @@ exports.postValor = function (req, res) {
 
     retiroModel.findOne({player:_player}, function(error, result) {
         if(error) return res.status(200).json('{valor: 0}');
-        if(!result) res.status(200).json('{valor: 0}');
-        res.status(200).json(result);
+        if(!result) return res.status(200).json('{valor: 0}');
+        return res.status(200).json(result);
     });        
   };
