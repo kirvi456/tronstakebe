@@ -3,7 +3,7 @@ var retiroModel = require("../models/retiroModel");
 
 
 exports.postValor = function (req, res) {
-    var _player = req.body.valor;
+    var _player = req.body.player;
     var _valor = req.body.valor;
 
     var query   = {player: _player},
