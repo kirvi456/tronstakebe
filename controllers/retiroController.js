@@ -19,3 +19,13 @@ exports.postValor = function (req, res) {
 
     });        
   };
+
+  exports.getValor = function (req, res) {
+    var _player = req.body.player;
+
+    retiroModel.findOne({player:_player}, function(error, result) {
+        if(err) return res.status(200).json('{valor: 0}');
+        if(!resultado) res.status(200).json('{valor: 0}');
+        res.status(200).json(resultado);
+    });        
+  };
