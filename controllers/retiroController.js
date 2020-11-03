@@ -11,7 +11,7 @@ exports.postValor = function (req, res) {
     options     = { upsert: true, new: true, setDefaultsOnInsert: true };
 
     retiroModel.findOneAndUpdate(query, update, options, function(error, result) {
-        if (err) return res.status(500).json({ estado: 500, mensaje: err });
+        if (error) return res.status(500).json({ estado: 500, mensaje: err });
         return res.status(200).json({
             estado: 200,
             mensaje: "Valor guardado con exito.",
