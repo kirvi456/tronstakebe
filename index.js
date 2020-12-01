@@ -13,7 +13,7 @@ var app = express();
 
 var retiro_routes = require('./routers/retiroRouter');
 var valorMoneda_routes = require('./routers/valorMoneda');
-var valorMoneda_routes = require('./routers/valorMonedaETH');
+var valorMoneda_routesETH = require('./routers/valorMonedaETH');
 var cors = require('cors');
 
 app.use(cors());
