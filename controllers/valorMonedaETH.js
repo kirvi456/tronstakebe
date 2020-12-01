@@ -1,5 +1,5 @@
 "use strict";
-var valorMonedaETH = require("../models/valorMonedaETHETH");
+var valorMonedaETH = require("../models/valorMonedaETH");
 
 exports.getPorHora = function (req, res) {
     valorMonedaETH.find({}, function(err, resultado){
