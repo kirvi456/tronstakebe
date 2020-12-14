@@ -14,6 +14,7 @@ var app = express();
 var retiro_routes = require('./routers/retiroRouter');
 var valorMoneda_routes = require('./routers/valorMoneda');
 var valorMoneda_routesETH = require('./routers/valorMonedaETH');
+var valorMoneda_routesUSDT = require('./routers/valorMonedaUSDT');
 var cors = require('cors');
 
 app.use(cors());
@@ -24,6 +25,7 @@ app.use(jsonErrorHandler)
 
 
 app.use('/', valorMoneda_routes);
+app.use('/', valorMoneda_routesETH);
 app.use('/', valorMoneda_routesETH);
 app.use('/', retiro_routes);
 
