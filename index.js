@@ -26,7 +26,7 @@ app.use(jsonErrorHandler)
 
 app.use('/', valorMoneda_routes);
 app.use('/', valorMoneda_routesETH);
-app.use('/', valorMoneda_routesETH);
+app.use('/', valorMoneda_routesUSDT);
 app.use('/', retiro_routes);
 
 
